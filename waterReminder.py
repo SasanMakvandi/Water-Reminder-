@@ -16,7 +16,7 @@ def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
 def main():
     number = "6479494660"
     message = "first python text"
-    sender_credentials = ("pythonscriptsasan@gmail.com", "Istakostovai2345")
+    sender_credentials = ("pythonscriptsasan@gmail.com", "Boogh2345")
     send_sms_via_email(number, message, sender_credentials)
 
 if __name__ == '__main__':
