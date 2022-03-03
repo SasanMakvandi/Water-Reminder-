@@ -3,7 +3,7 @@ import email, smtplib, ssl
 def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
     subject: str="Water Reminder from your sexy boyfriend", smtp_server ="smtp.gmail.com", smpt_port: int = 465):
     sender_email, email_password = sender_credentials
-    reciever_email = f"{number}@@pcs.rogers.com"
+    reciever_email = f"{number}@pcs.rogers.com"
     #reciever_email = f"{number}@msg.koodomobile.com"
     #reciever_email = f"{number}@fido.ca"
     email_message = f"Subject:{subject}\nTo:{reciever_email}\n{message}"
