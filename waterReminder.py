@@ -1,4 +1,5 @@
 import email, smtplib, ssl
+from datetime import datetime
 #ip address for raspberry pi is  10.0.0.241
 def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
     subject: str="Water Reminder from your sexy boyfriend", smtp_server ="smtp.gmail.com", smpt_port: int = 465):
@@ -14,10 +15,17 @@ def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
 
 
 def main():
-    number = "4379960496"
-    message = "This is your first water reminder, PLEASE DRINK WATER NOW DO IT NOW NOW NOW NOW"
-    sender_credentials = ("pythonscriptsasan@gmail.com", "Boogh2345")
-    send_sms_via_email(number, message, sender_credentials)
+    now = datetime.now()
+    current_hour = now.strftime("%H")
+    current_min = now.strftime("%M")
+    if((current_hour == "10" and current_min == "00" ) or (current_hour == "13" and current_min == "00" ) or
+    (current_hour == "16" and current_min == "00" ) or (current_hour == "20" and current_min == "00" ) or
+    (current_hour == "22" and current_min == "00" ) or (current_hour == "17" and current_min == "35" )):
+        number = "4379960496"
+        message = "This is your first water reminder, PLEASE DRINK WATER NOW DO IT NOW NOW NOW NOW"
+        sender_credentials = ("pythonscriptsasan@gmail.com", "Boogh2345")
+        send_sms_via_email(number, message, sender_credentials)
 
 if __name__ == '__main__':
-    main()
+    while True:
+        main()
