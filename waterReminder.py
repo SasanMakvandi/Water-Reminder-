@@ -18,3 +18,6 @@ def main():
     message = "first python text"
     sender_credentials = ("pythonscriptsasan@gmail.com", "Istakostovai2345")
     send_sms_via_email(number, message, sender_credentials)
+
+if __name__ == '__main__':
+    main()
