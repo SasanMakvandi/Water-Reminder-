@@ -1,10 +1,10 @@
 import email, smtplib, ssl
 #ip address for raspberry pi is  10.0.0.241
 def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
-    subject: str="sent using python", smtp_server ="smtp.gmail.com", smpt_port: int = 465):
+    subject: str="Water Reminder from your sexy boyfriend", smtp_server ="smtp.gmail.com", smpt_port: int = 465):
     sender_email, email_password = sender_credentials
-    #reciever_email = f"{number}@@pcs.rogers.com"
-    reciever_email = f"{number}@msg.koodomobile.com"
+    reciever_email = f"{number}@@pcs.rogers.com"
+    #reciever_email = f"{number}@msg.koodomobile.com"
     #reciever_email = f"{number}@fido.ca"
     email_message = f"Subject:{subject}\nTo:{reciever_email}\n{message}"
 
@@ -14,8 +14,8 @@ def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
 
 
 def main():
-    number = "6479494660"
-    message = "Salam lotfan nahar bede "
+    number = "4379960496"
+    message = "This is your first water reminder, PLEASE DRINK WATER NOW DO IT NOW NOW NOW NOW"
     sender_credentials = ("pythonscriptsasan@gmail.com", "Boogh2345")
     send_sms_via_email(number, message, sender_credentials)
 
