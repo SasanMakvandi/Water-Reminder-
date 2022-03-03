@@ -1,5 +1,6 @@
 import email, smtplib, ssl
 from datetime import datetime
+import time
 #ip address for raspberry pi is  10.0.0.241
 def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
     subject: str="Water Reminder from your sexy boyfriend", smtp_server ="smtp.gmail.com", smpt_port: int = 465):
@@ -18,14 +19,15 @@ def main():
     now = datetime.now()
     current_hour = now.strftime("%H")
     current_min = now.strftime("%M")
-    print(current_hour + ":" + current_min)
+    print(current_hour)
     if((current_hour == "10" and current_min == "00" ) or (current_hour == "13" and current_min == "00" ) or
     (current_hour == "16" and current_min == "00" ) or (current_hour == "20" and current_min == "00" ) or
-    (current_hour == "22" and current_min == "00" ) or (current_hour == "17" and current_min == "42" )):
+    (current_hour == "22" and current_min == "00" ) or (current_hour == "17" and current_min == "45" )):
         number = "6479494660"
         message = "This is your first water reminder, PLEASE DRINK WATER NOW DO IT NOW NOW NOW NOW"
         sender_credentials = ("pythonscriptsasan@gmail.com", "Boogh2345")
         send_sms_via_email(number, message, sender_credentials)
+        time.sleep(60)
 
 if __name__ == '__main__':
     while True:
