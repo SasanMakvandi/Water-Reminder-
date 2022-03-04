@@ -1,8 +1,9 @@
 import email, smtplib, ssl
 from datetime import datetime
 import time
+import json
 #ip address for raspberry pi is  10.0.0.241
-def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
+def send_sms_via_email(number: str, message: str, sender_credentials: tuple, provider: str,
     subject: str="Water Reminder from your sexy boyfriend", smtp_server ="smtp.gmail.com", smpt_port: int = 465):
     sender_email, email_password = sender_credentials
     reciever_email = f"{number}@pcs.rogers.com"
@@ -16,6 +17,9 @@ def send_sms_via_email(number: str, message: str, sender_credentials: tuple,
 
 
 def main():
+    f = open('providers.JSON', 'r')
+    data = json.load(f)
+
     now = datetime.now()
     current_hour = now.strftime("%H")
     current_min = now.strftime("%M")

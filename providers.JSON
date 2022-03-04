@@ -1,0 +1,19 @@
+{
+  "Rogers": {
+    "GateWay": "@pcs.rogers.com",
+    "startsOne": "@sms.rogers.com"
+  },
+  "Fido": {
+    "GateWay": "@sms.fido.ca"
+  },
+  "Bell": {
+    "GateWay": "@txt.bell.ca"
+  },
+  "Koodo" : {
+    "GateWay":"@msg.koodomobile.com"
+  },
+  "Freedom" : {
+    "GateWay": "@txt.freedommobile.ca"
+  }
+
+}
