@@ -26,7 +26,7 @@ def main():
     
     if((current_hour == "10" and current_min == "00" ) or (current_hour == "13" and current_min == "00" ) or
     (current_hour == "16" and current_min == "00" ) or (current_hour == "20" and current_min == "00" ) or
-    (current_hour == "22" and current_min == "00" ) or (current_hour == "18" and current_min == "15")):
+    (current_hour == "22" and current_min == "00" ) or (current_hour == "18" and current_min == "20")):
         number = "4379960496"
         message = "This is your first water reminder, PLEASE DRINK WATER NOW DO IT NOW NOW NOW NOW"
         sender_credentials = ("pythonscriptsasan@gmail.com", "Boogh2345")
